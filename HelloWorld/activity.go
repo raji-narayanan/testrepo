@@ -27,14 +27,15 @@ func (a *MyActivity) Metadata() *activity.Metadata {
 // Eval implements activity.Activity.Eval
 func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	// Get the activity data from the context
-	name := context.GetInput("name").(string)
-	salutation := context.GetInput("salutation").(string)
+	//name := context.GetInput("name").(string)
+	//salutation := context.GetInput("salutation").(string)
 
 	// Use the log object to log the greeting
-	log.Debugf("The Flogo engine says [%s] to [%s]", salutation, name)
+	//log.Debugf("The Flogo engine says [%s] to [%s]", salutation, name)
+	log.Debugf("The Flogo engine says Hello")
 
 	// Set the result as part of the context
-	context.SetOutput("result", "The Flogo engine says "+salutation+" to "+name)
+	context.SetOutput("result", "The Flogo engine says Hello")
 
 	// Signal to the Flogo engine that the activity is completed
 	return true, nil
